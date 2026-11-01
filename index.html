@@ -88,7 +88,6 @@ footer{text-align:center;padding:20px 0 10px;color:var(--rose);font-size:13px}
 
 <main id="card">
   <section class="hero">
-    <img src="Ganesha_Clip_Art.jpg" alt="Lord Ganesha" style="width: 100px; height: auto; display: block; margin: 0 auto 10px auto;">
     <div class="bless">॥ Shree Ganeshay Namah ॥</div>
     <div class="mantra">वक्रतुण्ड महाकाय सूर्यकोटि समप्रभः।<br>निर्विघ्नं कुरु में देव, सर्व कार्येषु सर्वदा ॥</div>
     <div class="floral">🌸🌿🌹🌿🌸</div>
@@ -251,6 +250,33 @@ function tick() {
   for (const k in v) { document.getElementById(k).textContent = Math.floor(t / v[k]); t %= v[k]; }
 }
 tick(); setInterval(tick, 1000);
+</script>
+  <!-- Background Music Player -->
+<audio id="bg-music" loop>
+    <source src="BackgroundMusic.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+</audio>
+
+<!-- Floating Play/Pause Music Button -->
+<div style="position: fixed; bottom: 20px; right: 20px; z-index: 9999;">
+    <button onclick="toggleMusic()" id="music-btn" style="background-color: #b8860b; color: white; border: none; padding: 12px 18px; border-radius: 30px; font-size: 14px; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.3); font-weight: bold;">
+        🎵 Play Music
+    </button>
+</div>
+
+<script>
+    const music = document.getElementById('bg-music');
+    const btn = document.getElementById('music-btn');
+    
+    function toggleMusic() {
+        if (music.paused) {
+            music.play();
+            btn.textContent = "🔇 Pause Music";
+        } else {
+            music.pause();
+            btn.textContent = "🎵 Play Music";
+        }
+    }
 </script>
 </body>
 </html>
