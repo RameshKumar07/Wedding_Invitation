@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ramesh &amp; Deepika · Wedding Invitation</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@400;600&family=Poppins:wght@300;400;500&family=Noto+Serif+Devanagari:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#2a0a14;--bg2:#4a1424;--rose:#e8a0b0;--gold:#e6c27a;--cream:#fff4ea;--ink:#fff4ea;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{background:radial-gradient(ellipse at top,var(--bg2),var(--bg) 70%) fixed;color:var(--ink);font-family:'Poppins',system-ui,sans-serif;font-weight:300;overflow-x:hidden;min-height:100vh}
+.script{font-family:'Great Vibes','Brush Script MT',cursive;color:var(--gold)}
+.serif{font-family:'Cormorant Garamond',Georgia,serif}
+#petals{position:fixed;inset:0;pointer-events:none;z-index:50;overflow:hidden}
+.petal{position:absolute;top:-30px;font-size:18px;opacity:.8;animation:fall linear infinite}
+@keyframes fall{to{transform:translateY(110vh) rotate(360deg)}}
+#intro{position:fixed;inset:0;z-index:100;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px;background:radial-gradient(ellipse at center,#5a1a2e,#220810 75%);transition:opacity 1s ease,visibility 1s}
+#intro.gone{opacity:0;visibility:hidden}
+#intro p{letter-spacing:.3em;font-size:12px;text-transform:uppercase;color:var(--rose);animation:pulse 2s infinite}
+@keyframes pulse{50%{opacity:.3}}
+.env{position:relative;width:min(86vw,360px);aspect-ratio:3/2;cursor:pointer;filter:drop-shadow(0 25px 40px rgba(0,0,0,.6));perspective:900px}
+.env .back{position:absolute;inset:0;background:#c9667d;border-radius:6px}
+.env .mini{position:absolute;left:6%;right:6%;top:6%;bottom:6%;background:var(--cream);border-radius:6px;color:#5a1a2e;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;transition:transform 1s .6s ease;z-index:2}
+.env .mini b{font-family:'Great Vibes',cursive;font-size:30px;font-weight:400}
+.env .front{position:absolute;inset:0;z-index:3;background:#d97b92;clip-path:polygon(0 0,50% 55%,100% 0,100% 100%,0 100%);border-radius:6px}
+.env .front::after{content:"";position:absolute;inset:0;background:#b8566e;clip-path:polygon(0 100%,50% 45%,100% 100%)}
+.env .flap{position:absolute;left:0;right:0;top:0;height:58%;background:#e58fa4;clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:top;transition:transform .8s ease;z-index:4}
+.env .seal{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:5;width:54px;height:54px;border-radius:50%;background:radial-gradient(circle at 30% 30%,#f0d28f,#b8893a);display:grid;place-items:center;font-size:24px;box-shadow:0 4px 12px rgba(0,0,0,.4);transition:opacity .3s;animation:beat 1.6s infinite}
+@keyframes beat{50%{transform:translate(-50%,-50%) scale(1.12)}}
+.env.open .flap{transform:rotateX(180deg);z-index:1}
+.env.open .seal{opacity:0}
+.env.open .mini{transform:translateY(-55%)}
+main{opacity:0;transition:opacity 1.4s ease;max-width:620px;margin:0 auto;padding:0 20px 60px}
+main.show{opacity:1}
+section{text-align:center;padding:64px 12px;position:relative}
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:10px;padding-top:40px}
+.hero .bless{letter-spacing:.35em;font-size:11px;text-transform:uppercase;color:var(--rose)}
+.hero h1{font-weight:400;font-size:clamp(54px,17vw,92px);line-height:1.05}
+.amp{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--rose);font-size:34px}
+.date-pill{margin-top:18px;border:1px solid var(--gold);padding:10px 26px;border-radius:40px;letter-spacing:.25em;font-size:13px;color:var(--gold);backdrop-filter:blur(4px);background:rgba(255,255,255,.04)}
+.floral{font-size:34px;letter-spacing:10px;margin:6px 0}
+h2{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:30px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:6px}
+.line{width:70px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:14px auto 26px}
+.scratch-wrap{position:relative;width:min(88vw,380px);height:190px;margin:22px auto 0;border-radius:18px;overflow:hidden;box-shadow:0 0 0 1px var(--gold),0 20px 40px rgba(0,0,0,.45)}
+.reveal{position:absolute;inset:0;background:linear-gradient(135deg,#fff4ea,#f8d3dc);color:#5a1a2e;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:16px;gap:4px}
+.reveal .hi{font-size:12px;letter-spacing:.3em;text-transform:uppercase}
+.reveal .nm{font-family:'Great Vibes',cursive;font-size:46px;line-height:1.1;color:#b0305a}
+.reveal .msg{font-family:'Cormorant Garamond',serif;font-size:19px;font-style:italic}
+#scratch{position:absolute;inset:0;width:100%;height:100%;touch-action:none;cursor:crosshair;transition:opacity .9s}
+#scratch.done{opacity:0;pointer-events:none}
+.hint{margin-top:12px;font-size:12px;letter-spacing:.2em;color:var(--rose)}
+.fam{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.fam div{background:rgba(255,255,255,.05);border:1px solid rgba(230,194,122,.35);border-radius:16px;padding:22px 12px}
+.fam small{display:block;letter-spacing:.2em;font-size:10px;text-transform:uppercase;color:var(--rose);margin-bottom:10px}
+.fam p{font-family:'Cormorant Garamond',serif;font-size:21px;line-height:1.5}
+.ev{background:linear-gradient(160deg,rgba(255,255,255,.08),rgba(255,255,255,.02));border:1px solid rgba(230,194,122,.35);border-radius:20px;padding:28px 18px;margin-bottom:20px}
+.ev .ic{font-size:30px}
+.ev h3{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:26px;margin:6px 0}
+.ev .t{color:var(--gold);letter-spacing:.2em;font-size:14px}
+.btn{display:inline-block;margin-top:16px;padding:11px 24px;border-radius:30px;background:linear-gradient(135deg,#e6c27a,#c0954a);color:#3a0f1c;text-decoration:none;font-weight:500;font-size:13px;letter-spacing:.1em}
+.cd{display:flex;justify-content:center;gap:12px}
+.cd div{width:70px;padding:14px 0;border-radius:14px;background:rgba(255,255,255,.06);border:1px solid rgba(230,194,122,.3)}
+.cd b{display:block;font-family:'Cormorant Garamond',serif;font-size:32px;color:var(--gold)}
+.cd span{font-size:10px;letter-spacing:.2em;text-transform:uppercase}
+.venue{margin-top:10px;font-family:'Cormorant Garamond',serif;font-size:20px;line-height:1.4}
+.mantra{font-family:'Noto Serif Devanagari','Cormorant Garamond',serif;font-size:clamp(15px,4.4vw,19px);line-height:1.9;color:var(--gold);margin-bottom:4px}
+.fl{position:fixed;z-index:200;pointer-events:none;left:var(--x);top:var(--y);font-size:var(--s);animation:fly var(--d) cubic-bezier(.2,.7,.4,1) forwards}
+@keyframes fly{0%{transform:translate(0,0) rotate(0);opacity:1}40%{transform:translate(var(--dx),var(--up)) rotate(calc(var(--r)/2));opacity:1}100%{transform:translate(calc(var(--dx)*1.3),var(--dn)) rotate(var(--r));opacity:0}}
+footer{text-align:center;padding:20px 0 10px;color:var(--rose);font-size:13px}
+</style>
+</head>
+<body>
+<div id="petals"></div>
+
+<div id="intro">
+  <div class="env" id="env" role="button" aria-label="Open invitation">
+    <div class="back"></div>
+    <div class="mini"><span style="font-size:11px;letter-spacing:.3em">YOU ARE INVITED</span><b>Ramesh &amp; Deepika</b></div>
+    <div class="front"></div>
+    <div class="flap"></div>
+    <div class="seal">❤</div>
+  </div>
+  <p>Tap to open</p>
+</div>
+
+<main id="card">
+  <section class="hero">
+    <div class="bless">॥ Shree Ganeshay Namah ॥</div>
+    <div class="mantra">वक्रतुण्ड महाकाय सूर्यकोटि समप्रभः।<br>निर्विघ्नं कुरु में देव, सर्व कार्येषु सर्वदा ॥</div>
+    <div class="floral">🌸🌿🌹🌿🌸</div>
+    <div class="serif" style="letter-spacing:.3em;font-size:13px;text-transform:uppercase">The Wedding Of</div>
+    <h1 class="script">Ramesh</h1>
+    <div class="amp">&amp;</div>
+    <h1 class="script">Deepika</h1>
+    <div class="date-pill">12 · NOVEMBER · 2026</div>
+  </section>
+
+  <section>
+    <h2>A Special Welcome</h2><div class="line"></div>
+    <div class="serif" style="font-size:19px;font-style:italic">Scratch the card below</div>
+    <div class="scratch-wrap">
+      <div class="reveal">
+        <div class="hi">Dear</div>
+        <div class="nm" id="guestName"></div>
+        <div class="msg">Aapka swagat hai! Hamari khushiyon mein shamil hone ke liye aap sadar aamantrit hain.</div>
+      </div>
+      <canvas id="scratch"></canvas>
+    </div>
+    <div class="hint" id="hint">✨ SCRATCH HERE ✨</div>
+  </section>
+
+  <section>
+    <h2>With Blessings Of</h2><div class="line"></div>
+    <div class="fam">
+      <div><small>Groom’s Parents</small><p>Chaitan<br>&amp; Meera</p></div>
+      <div><small>Bride’s Parents</small><p>Ashwani<br>&amp; Sushil Bai</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Celebrations</h2><div class="line"></div>
+    <div class="ev">
+      <div class="ic">💍</div><h3>Wedding Ceremony</h3>
+      <div class="t">12 NOV 2026 · 10:00 AM</div>
+      <div class="venue">Aarya Samaj Mandir,<br>Baijnathpara, Raipur</div>
+      <a class="btn" href="https://maps.app.goo.gl/Aiy6ea4bJ1NmPybc9" target="_blank" rel="noopener">📍 View Venue</a>
+    </div>
+    <div class="ev">
+      <div class="ic">🍽️</div><h3>Wedding Lunch</h3>
+      <div class="t">12 NOV 2026 · 1:00 PM</div>
+      <div class="venue">Hotel Casa Del Sol,<br>Raipur</div>
+      <a class="btn" href="https://maps.app.goo.gl/dfHKRqWrM4QovkBp6" target="_blank" rel="noopener">📍 View Venue</a>
+    </div>
+  </section>
+
+  <section>
+    <h2>Counting Down</h2><div class="line"></div>
+    <div class="cd">
+      <div><b id="d">0</b><span>Days</span></div><div><b id="h">0</b><span>Hours</span></div>
+      <div><b id="m">0</b><span>Mins</span></div><div><b id="s">0</b><span>Secs</span></div>
+    </div>
+    
+  </section>
+
+  <footer>
+    <div style="padding-bottom:500px font-size:34px">Warm Regards,</div>
+    <div class="script" style="font-size:34px">Ramesh &amp; Deepika</div>
+    <div style="margin-top:8px">Your presence is the greatest gift 💗</div>
+  </footer>
+</main>
+
+<script>
+/* ============================================================
+   ✏️ GUEST KA NAAM YAHAN BADLEIN (sirf yahi ek line)
+   ============================================================ */
+const GUEST_NAME = "Mithlesh Choudhary";
+/* ============================================================ */
+
+document.getElementById('guestName').textContent = GUEST_NAME;
+
+(function(){
+  const p = document.getElementById('petals'), icons = ['🌸','🌺','🌷','💮'];
+  for (let i = 0; i < 16; i++) {
+    const e = document.createElement('span');
+    e.className = 'petal';
+    e.textContent = icons[i % icons.length];
+    e.style.left = Math.random() * 100 + 'vw';
+    e.style.fontSize = 12 + Math.random() * 14 + 'px';
+    e.style.animationDuration = 9 + Math.random() * 10 + 's';
+    e.style.animationDelay = -Math.random() * 15 + 's';
+    p.appendChild(e);
+  }
+})();
+
+const env = document.getElementById('env');
+env.addEventListener('click', () => {
+  if (env.classList.contains('open')) return;
+  env.classList.add('open');
+  setTimeout(() => {
+    document.getElementById('intro').classList.add('gone');
+    document.getElementById('card').classList.add('show');
+    initScratch();
+  }, 2400);
+});
+
+let scratchReady = false;
+function initScratch() {
+  if (scratchReady) return; scratchReady = true;
+  const c = document.getElementById('scratch'), ctx = c.getContext('2d');
+  const r = c.getBoundingClientRect(); c.width = r.width; c.height = r.height;
+  const g = ctx.createLinearGradient(0, 0, c.width, c.height);
+  g.addColorStop(0, '#e6c27a'); g.addColorStop(.5, '#f6e3b0'); g.addColorStop(1, '#b8893a');
+  ctx.fillStyle = g; ctx.fillRect(0, 0, c.width, c.height);
+  ctx.fillStyle = 'rgba(90,26,46,.55)'; ctx.font = '26px serif'; ctx.textAlign = 'center';
+  ctx.fillText('🌸  Scratch Me  🌸', c.width / 2, c.height / 2 + 8);
+  ctx.globalCompositeOperation = 'destination-out';
+  let down = false, last = 0;
+  const pos = e => { const b = c.getBoundingClientRect(), t = e.touches ? e.touches[0] : e; return [t.clientX - b.left, t.clientY - b.top]; };
+  const draw = e => {
+    if (!down) return; e.preventDefault();
+    const [x, y] = pos(e);
+    ctx.beginPath(); ctx.arc(x, y, 22, 0, 7); ctx.fill();
+    if (Date.now() - last > 200) { last = Date.now(); check(); }
+  };
+  function check() {
+    const d = ctx.getImageData(0, 0, c.width, c.height).data; let n = 0;
+    for (let i = 3; i < d.length; i += 16) if (d[i] === 0) n++;
+    if (n / (d.length / 16) > .4 && !c.classList.contains('done')) { c.classList.add('done'); document.getElementById('hint').textContent = '💖 WELCOME 💖'; throwFlowers(); }
+  }
+  c.addEventListener('mousedown', e => { down = true; draw(e); });
+  c.addEventListener('touchstart', e => { down = true; draw(e); }, { passive: false });
+  addEventListener('mouseup', () => down = false);
+  addEventListener('touchend', () => down = false);
+  c.addEventListener('mousemove', draw);
+  c.addEventListener('touchmove', draw, { passive: false });
+}
+
+function throwFlowers() {
+  const icons = ['🌸','🌺','🌷','🌹','💮','🪷'], W = innerWidth, H = innerHeight;
+  for (let i = 0; i < 44; i++) {
+    const e = document.createElement('span'), left = i % 2 === 0;
+    e.className = 'fl';
+    e.textContent = icons[i % icons.length];
+    const s = e.style;
+    s.setProperty('--x', (left ? 4 : 96) + 'vw');
+    s.setProperty('--y', '88vh');
+    s.setProperty('--s', 18 + Math.random() * 18 + 'px');
+    s.setProperty('--d', 2.4 + Math.random() * 1.6 + 's');
+    s.setProperty('--dx', (left ? 1 : -1) * (W * (0.1 + Math.random() * 0.4)) + 'px');
+    s.setProperty('--up', -(H * (0.35 + Math.random() * 0.45)) + 'px');
+    s.setProperty('--dn', H * 0.25 + 'px');
+    s.setProperty('--r', (Math.random() * 720 - 360) + 'deg');
+    s.animationDelay = Math.random() * 0.5 + 's';
+    document.body.appendChild(e);
+    setTimeout(() => e.remove(), 5000);
+  }
+}
+let endShown = false;
+new IntersectionObserver(es => {
+  if (es[0].isIntersecting && !endShown && scratchReady) { endShown = true; throwFlowers(); }
+}, { threshold: 0.6 }).observe(document.querySelector('footer'));
+
+const target = new Date('2026-11-12T10:00:00+05:30').getTime();
+function tick() {
+  let t = Math.max(0, target - Date.now());
+  const v = { d: 864e5, h: 36e5, m: 6e4, s: 1e3 };
+  for (const k in v) { document.getElementById(k).textContent = Math.floor(t / v[k]); t %= v[k]; }
+}
+tick(); setInterval(tick, 1000);
+</script>
+</body>
+</html>
